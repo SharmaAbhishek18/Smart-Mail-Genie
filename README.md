@@ -1,54 +1,44 @@
-🧠 Smart Mail-Genie – AI-Powered Email Reply Assistant
-Smart Mail-Genie is an intelligent email assistant that integrates with Gmail and uses generative AI to craft professional, context-aware replies.
-Designed to boost productivity by reducing response time and improving communication tone.
+📧 Smart Mail Genie – AI Email Writer
+
+Smart Mail Genie is an AI-powered email assistant built with Spring Boot that helps users generate professional, well-structured, and context-aware email responses in different tones (formal, casual, polite, etc.).
+
+It leverages WebClient to interact with an AI API and returns a neatly formatted email draft ready for use.
 
 🚀 Features
-✉️ AI-Based Email Reply Generation – Generates contextual responses using Gemini AI APIs
 
-🌐 Chrome Extension Integration – Seamless in-browser suggestions inside Gmail
+✨ Generate AI-written email responses based on content + tone
 
-⚙️ Tone Customization – Choose formal, friendly, or neutral tone for replies
+📦 Built with Spring Boot for backend services
 
-🧩 Spring Boot Backend – REST API server for handling email requests and integrating AI
+🔗 Uses WebClient to call AI APIs
 
-🧠 Prompt Engineering – Dynamic prompt creation for accurate AI understanding
+📑 Structured JSON request & response handling
 
-🛠️ Tech Stack
-Backend: Spring Boot, Spring AI, WebClient
+🌐 REST APIs to integrate with frontends (React, mobile apps, etc.)
 
-Frontend: React.js, Chrome Extension
+⚡ Lightweight & fast email drafting system
 
-AI: Google Gemini API
+🏗️ Project Architecture
+User → REST API (Spring Boot) → AI Service (WebClient) → Response → Email Draft
 
-JSON Processing: Jackson ObjectMapper
 
-📦 Folder Structure
+Modules:
 
-src/
-├── controller/
-│   └── EmailGeneratorController.java
-├── service/
-│   └── EmailGeneratorService.java
-├── config/
-│   └── WebConfig.java
-├── model/
-│   └── EmailRequest.java
-📥 Sample Request
-json
-Copy
-Edit
-POST /api/email/generate
-{
-  "emailContent": "Hi, can we reschedule the meeting?",
-  "tone": "formal"
-}
-📌 How It Works
-1.User inputs email content and selects tone
+Controller → Handles API requests
 
-2.Backend builds dynamic AI prompt
+Service → Builds prompts & communicates with AI
 
-3.Request sent to Gemini API via WebClient
+Utils → JSON parsing & response formatting
 
-4.AI returns response text
+📂 Project Structure
+src/main/java/com/email/writer/
+│── Controller/        # API endpoints
+│── Service/           # Business logic, WebClient integration
+│── Utils/             # JSON parsing, helpers
+│── Application.java   # Main Spring Boot entry
 
-5.Chrome Extension displays it within Gmail
+⚙️ Tech Stack
+Backend: Spring Boot (Java 17+)
+HTTP Client: WebClient
+AI Integration: OpenAI-compatible API
+Build Tool: Maven
